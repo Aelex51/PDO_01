@@ -9,7 +9,7 @@ if(!empty($_POST)){
     $query = "INSERT INTO friend (firstname, lastname) VALUES (:firstname, :lastname)";
     $statement = $pdo->prepare($query);
     $statement->bindValue(':firstname', $firstname, \PDO::PARAM_STR);                                    
-    $statement->bindValue(':lastname', $lastname, \PDO::PARAM_STR);                                                 /* pourquoi ca rajoute un nom au refresh de page*/
+    $statement->bindValue(':lastname', $lastname, \PDO::PARAM_STR);                                                 
     $statement->execute();
     header("Location: /index.php");
 }                                                                                                               
